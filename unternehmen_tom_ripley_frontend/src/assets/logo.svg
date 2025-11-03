@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Unternehmen Tom Ripley</title>
+  <desc id="logoDesc">Ocean Professional theme logo placeholder</desc>
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="160" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="6" width="28" height="28" rx="8" fill="url(#ocean)"/>
+  <path d="M10 20c6-7 14-7 20 0-6 7-14 7-20 0z" fill="#F59E0B" opacity="0.85"/>
+  <text x="40" y="25" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700" font-size="16" fill="#111827">tom-ripley</text>
+</svg>
