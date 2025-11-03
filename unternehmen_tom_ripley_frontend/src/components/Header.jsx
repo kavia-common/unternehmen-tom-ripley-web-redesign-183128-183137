@@ -249,6 +249,7 @@ function Header({ onThemeToggle }) {
         .skip-link:focus {
           left: 12px;
           transform: translateY(12px);
+          box-shadow: 0 0 0 3px color-mix(in srgb, white 80%, var(--color-primary));
         }
 
         .site-header {
@@ -282,6 +283,9 @@ function Header({ onThemeToggle }) {
           font-weight: 700;
           letter-spacing: 0.2px;
           white-space: nowrap;
+        }
+        .brand-title:hover, .brand-title:focus {
+          color: color-mix(in srgb, var(--color-primary) 60%, var(--text));
         }
 
         .nav {

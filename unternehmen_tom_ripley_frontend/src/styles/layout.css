@@ -14,6 +14,9 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
+  /* Ensure sufficient default text contrast over surfaces */
+  color: var(--text);
+  background: var(--bg);
 }
 
 img,
@@ -34,8 +37,19 @@ textarea {
 
 /* A11y focus styles */
 :focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--color-primary) 60%, white);
-  outline-offset: 2px;
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 65%, white);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* Ensure common interactive elements show focus even when not using :focus-visible */
+a:focus,
+button:focus,
+[role="button"]:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 65%, white);
+  outline-offset: 3px;
   border-radius: 6px;
 }
 
@@ -79,38 +93,41 @@ textarea {
 
 /* Section spacing helpers */
 .section {
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-12);
+  padding-top: clamp(var(--space-10), 6vw, var(--space-12));
+  padding-bottom: clamp(var(--space-10), 6vw, var(--space-12));
 }
 
 .section-sm {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
+  padding-top: clamp(var(--space-6), 4vw, var(--space-8));
+  padding-bottom: clamp(var(--space-6), 4vw, var(--space-8));
 }
 
 .section-lg {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: clamp(var(--space-12), 8vw, var(--space-16));
+  padding-bottom: clamp(var(--space-12), 8vw, var(--space-16));
 }
 
 /* Grid helpers */
 .grid {
   display: grid;
-  gap: var(--space-6);
+  gap: clamp(var(--space-4), 3vw, var(--space-6));
 }
 
-.grid-2 {
-  grid-template-columns: 1fr;
-}
-
+.grid-2,
 .grid-3 {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* 1 column on small */
 }
 
-@media (min-width: 768px) {
-  .grid-2 {
+/* Medium: 2 columns */
+@media (min-width: 640px) {
+  .grid-2,
+  .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* Large: 3 columns for .grid-3 only */
+@media (min-width: 1024px) {
   .grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

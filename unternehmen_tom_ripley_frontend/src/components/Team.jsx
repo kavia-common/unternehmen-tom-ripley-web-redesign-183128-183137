@@ -59,9 +59,11 @@ function Team() {
                 src={m.img}
                 alt={m.alt}
                 loading="lazy"
+                decoding="async"
                 width="480"
                 height="480"
                 className="avatar"
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 33vw, 300px"
               />
             </div>
             <figcaption className="member-meta">
