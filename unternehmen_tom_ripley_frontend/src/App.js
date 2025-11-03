@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Team from './components/Team';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -32,6 +33,8 @@ function App() {
         <Team />
         <ContactForm />
       </main>
+
+      <Footer />
     </div>
   );
 }
