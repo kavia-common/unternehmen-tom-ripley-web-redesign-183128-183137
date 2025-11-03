@@ -15,6 +15,12 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Large button size modifier used by Hero CTAs */
+.btn-lg {
+  padding: 12px 18px;
+  font-weight: 600;
+}
+
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);

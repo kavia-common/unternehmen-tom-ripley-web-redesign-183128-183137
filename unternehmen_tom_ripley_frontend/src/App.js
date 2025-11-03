@@ -1,47 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import logo from './assets/logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
 
 // PUBLIC_INTERFACE
 function App() {
   const [theme, setTheme] = useState('light');
 
-  // Effect to apply theme to document element
+  // Apply theme to document element
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   // PUBLIC_INTERFACE
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Fixed header with navigation */}
+      <Header onThemeToggle={toggleTheme} />
+
+      {/* Hero section */}
+      <main id="main-content">
+        <Hero />
+        {/* Placeholder anchors to satisfy nav links until other sections are built */}
+        <section id="services" className="section">
+          <div className="container">
+            <h2 className="h2">Services</h2>
+            <p className="muted">Our service overview will appear here.</p>
+          </div>
+        </section>
+        <section id="team" className="section surface">
+          <div className="container">
+            <h2 className="h2">Team</h2>
+            <p className="muted">Meet the team section is coming soon.</p>
+          </div>
+        </section>
+        <section id="contact" className="section">
+          <div className="container">
+            <h2 className="h2">Contact</h2>
+            <p className="muted">Get in touch using the form we will add here.</p>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

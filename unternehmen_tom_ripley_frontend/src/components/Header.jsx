@@ -51,8 +51,8 @@ function Header({ onThemeToggle }) {
       const heading = el.querySelector('h1, h2, [role="heading"]');
       if (heading) heading.focus?.();
       // Update URL hash without jumping
-      if (history.pushState) {
-        history.pushState(null, '', href);
+      if (window.history && typeof window.history.pushState === 'function') {
+        window.history.pushState(null, '', href);
       } else {
         window.location.hash = href;
       }
