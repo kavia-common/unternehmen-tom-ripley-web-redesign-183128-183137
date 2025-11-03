@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Team from './components/Team';
+import ContactForm from './components/ContactForm';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -24,17 +25,12 @@ function App() {
       {/* Fixed header with navigation */}
       <Header onThemeToggle={toggleTheme} />
 
-      {/* Hero section */}
+      {/* Page sections */}
       <main id="main-content">
         <Hero />
         <Services />
         <Team />
-        <section id="contact" className="section">
-          <div className="container">
-            <h2 className="h2">Contact</h2>
-            <p className="muted">Get in touch using the form we will add here.</p>
-          </div>
-        </section>
+        <ContactForm />
       </main>
     </div>
   );
