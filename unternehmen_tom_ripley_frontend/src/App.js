@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Services from './components/Services';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -25,13 +26,7 @@ function App() {
       {/* Hero section */}
       <main id="main-content">
         <Hero />
-        {/* Placeholder anchors to satisfy nav links until other sections are built */}
-        <section id="services" className="section">
-          <div className="container">
-            <h2 className="h2">Services</h2>
-            <p className="muted">Our service overview will appear here.</p>
-          </div>
-        </section>
+        <Services />
         <section id="team" className="section surface">
           <div className="container">
             <h2 className="h2">Team</h2>

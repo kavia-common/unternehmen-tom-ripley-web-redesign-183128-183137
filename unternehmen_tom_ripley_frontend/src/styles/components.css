@@ -59,6 +59,11 @@
   padding: var(--space-6);
   transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
+@media (max-width: 479px) {
+  .card {
+    padding: var(--space-4);
+  }
+}
 
 .card:hover {
   transform: translateY(-2px);
