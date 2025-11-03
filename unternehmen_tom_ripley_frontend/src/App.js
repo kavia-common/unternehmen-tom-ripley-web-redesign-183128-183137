@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Team from './components/Team';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -27,12 +28,7 @@ function App() {
       <main id="main-content">
         <Hero />
         <Services />
-        <section id="team" className="section surface">
-          <div className="container">
-            <h2 className="h2">Team</h2>
-            <p className="muted">Meet the team section is coming soon.</p>
-          </div>
-        </section>
+        <Team />
         <section id="contact" className="section">
           <div className="container">
             <h2 className="h2">Contact</h2>
