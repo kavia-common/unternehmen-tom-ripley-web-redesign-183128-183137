@@ -1,0 +1,45 @@
+:root {
+  /* Ocean Professional Theme Variables */
+  --color-primary: #2563EB; /* Blue */
+  --color-secondary: #F59E0B; /* Amber */
+  --color-error: #EF4444;
+
+  --bg: #f9fafb;        /* Background */
+  --surface: #ffffff;   /* Surfaces/cards */
+  --text: #111827;      /* Main text */
+
+  /* Accents and states */
+  --text-muted: #6b7280;
+  --border: rgba(17, 24, 39, 0.12);
+
+  /* Gradient for hero/large sections */
+  --gradient-hero: linear-gradient(135deg, rgba(59,130,246,0.1), #f9fafb);
+
+  /* Elevation and radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+[data-theme="dark"] {
+  /* Dark mode overrides with good contrast */
+  --bg: #1a1a1a;
+  --surface: #111827;
+  --text: #f9fafb;
+
+  /* Keep brand colors but adjust supporting tones for contrast */
+  --text-muted: #d1d5db;
+  --border: rgba(255, 255, 255, 0.12);
+
+  --gradient-hero: linear-gradient(135deg, rgba(59,130,246,0.18), #0f172a);
+}
+
+/* Base document bindings to new variables */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}

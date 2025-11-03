@@ -1,0 +1,129 @@
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* A11y focus styles */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 60%, white);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Spacing scale */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+}
+
+/* Breakpoints */
+:root {
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+}
+
+/* Container utilities */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+  max-width: 1200px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+/* Section spacing helpers */
+.section {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.section-sm {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.section-lg {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+/* Grid helpers */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Typography helpers */
+.h1, h1 { font-size: clamp(2rem, 1.2rem + 2.5vw, 3rem); margin: 0 0 var(--space-4); }
+.h2, h2 { font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem); margin: 0 0 var(--space-3); }
+.h3, h3 { font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem); margin: 0 0 var(--space-2); }
+.p, p   { margin: 0 0 var(--space-4); color: var(--text); }
+.muted  { color: var(--text-muted); }
+
+/* Utility helpers */
+.rounded { border-radius: var(--radius-md); }
+.shadow  { box-shadow: var(--shadow-md); }
+.surface { background: var(--surface); border: 1px solid var(--border); }
